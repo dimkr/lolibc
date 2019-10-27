@@ -78,5 +78,7 @@
 
 #endif /* !_SYS_TIME_H_ */
 
+#include_next <sys/time.h>
+
 #include <sys/types.h>
 #include <time.h>
