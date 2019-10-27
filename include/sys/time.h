@@ -77,3 +77,6 @@
 	} while (0)
 
 #endif /* !_SYS_TIME_H_ */
+
+#include <sys/types.h>
+#include <time.h>

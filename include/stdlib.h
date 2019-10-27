@@ -42,4 +42,10 @@ void	*reallocarray(void *, size_t, size_t);
 long long
 	 strtonum(const char *, long long, long long, const char **);
 
+static inline
+void	 srand_deterministic(unsigned seed)
+{
+	srand(seed);
+}
+
 #endif
