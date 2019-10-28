@@ -1,6 +1,6 @@
 project('lolibc', 'c')
 
-lolibc_c_args = ['-D__dead=']
+lolibc_c_args = []
 
 lolibc_includes = include_directories('include')
 

@@ -53,3 +53,4 @@ strlcat(char *dst, const char *src, size_t dsize)
 
 	return(dlen + (src - osrc));	/* count does not include NUL */
 }
+DEF_WEAK(strlcat);
