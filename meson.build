@@ -22,7 +22,7 @@ endif
 
 if cc.has_function('issetugid', prefix: '#include <unistd.h>')
 	lolibc_c_args += ['-DHAVE_ISSETUGID']
-
+else
 	if cc.has_header('sys/auxv.h')
 		lolibc_c_args += ['-DHAVE_SYS_AUXV_H']
 	endif
