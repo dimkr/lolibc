@@ -9,6 +9,8 @@ int	 pledge(const char *promises, const char *execpromises)
 	return 0;
 }
 
+#ifdef HAVE_SYS_AUXV_H
+
 #include <sys/auxv.h>
 
 static inline
@@ -16,6 +18,8 @@ int	 issetugid(void)
 {
 	return getauxval(AT_SECURE) != 0;
 }
+
+#endif
 
 /* for setgroups() */
 #include <grp.h>
