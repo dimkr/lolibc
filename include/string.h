@@ -37,7 +37,12 @@
  *	@(#)string.h	5.10 (Berkeley) 3/9/91
  */
 
+#ifndef HAVE_STRLCAT
 size_t	 strlcat(char *, const char *, size_t);
+#endif
+
+#ifndef HAVE_STRLCPY
 size_t	 strlcpy(char *, const char *, size_t);
+#endif
 
 #endif

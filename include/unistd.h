@@ -9,7 +9,7 @@ int	 pledge(const char *promises, const char *execpromises)
 	return 0;
 }
 
-#ifdef HAVE_SYS_AUXV_H
+#if !defined(HAVE_ISSETUGID) && defined(HAVE_SYS_AUXV_H)
 
 #include <sys/auxv.h>
 
