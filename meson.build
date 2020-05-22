@@ -1,4 +1,4 @@
-project('lolibc', 'c')
+project('lolibc', 'c', version: '6.7')
 
 lolibc_srcs = ['strtonum.c', 'reallocarray.c', 'vis.c', 'unvis.c']
 
