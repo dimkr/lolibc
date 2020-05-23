@@ -53,4 +53,6 @@
 
 #endif /* !_SYS_CDEFS_H_ */
 
+#ifdef HAVE_SYS_CDEFS_H
 #include_next <sys/cdefs.h>
+#endif

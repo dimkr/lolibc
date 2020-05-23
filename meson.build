@@ -28,6 +28,10 @@ else
 	endif
 endif
 
+if cc.has_header('sys/cdefs.h')
+	lolibc_c_args += ['-DHAVE_SYS_CDEFS_H']
+endif
+
 liblolibc = static_library('lolibc',
                            lolibc_srcs,
                            c_args: lolibc_c_args,
