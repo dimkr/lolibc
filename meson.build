@@ -41,12 +41,11 @@ endif
 if cc.has_header_symbol('signal.h', 'sys_signame')
 	lolibc_c_args += ['-DHAVE_SYS_SIGNAME']
 else
-	lolibc_srcs += ['sys_signame.c']
 	sys_signame_h = custom_target('sys_signame_h',
 	                              input: 'sys_signame.sh',
 	                              output: 'sys_signame.h',
 	                              command: ['@INPUT@', '@OUTPUT@'])
-	lolibc_srcs += sys_signame_h
+	lolibc_srcs += [sys_signame_h, 'sys_signame.c']
 endif
 
 liblolibc = static_library('lolibc',
