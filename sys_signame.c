@@ -1,3 +1,4 @@
-char *sys_siglist[] = {
+char *sys_signame[] = {
+	"",
 #include "sys_signame.h"
 };
