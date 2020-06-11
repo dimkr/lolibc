@@ -1,6 +1,5 @@
 #include <signal.h>
 #include <string.h>
-#include <pthread.h>
 
 char **strsignals(void)
 {
