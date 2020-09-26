@@ -10,8 +10,8 @@ static inline int _get_child_max(void)
 
 	if (cache == 0) {
 		cache = sysconf(_SC_CHILD_MAX);
-		if ((cache <= 0) || (cache > INT_MAX))
-			cache = INT_MAX;
+		if ((cache <= 0) || (cache > 0x7fffffff))
+			cache = 80;
 	}
 
 	return (int)cache;
