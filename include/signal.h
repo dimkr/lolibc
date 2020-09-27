@@ -7,9 +7,7 @@
 extern char *sys_signame[];
 #endif
 
-#ifndef HAVE_SYS_SIGLIST
 char **strsignals(void);
 #define sys_siglist (strsignals())
-#endif
 
 #endif

@@ -1,6 +1,6 @@
 project('lolibc', 'c', version: '6.7')
 
-lolibc_srcs = ['strtonum.c', 'reallocarray.c', 'vis.c', 'unvis.c']
+lolibc_srcs = ['strtonum.c', 'reallocarray.c', 'vis.c', 'unvis.c', 'strsignals.c']
 
 lolibc_c_args = []
 
@@ -32,21 +32,15 @@ if cc.has_header('sys/cdefs.h')
 	lolibc_c_args += ['-DHAVE_SYS_CDEFS_H']
 endif
 
-if cc.has_header_symbol('signal.h', 'sys_siglist')
-	lolibc_c_args += ['-DHAVE_SYS_SIGLIST']
-else
-	lolibc_srcs += ['strsignals.c']
-endif
-
 if cc.has_header_symbol('signal.h', 'sys_signame')
 	lolibc_c_args += ['-DHAVE_SYS_SIGNAME']
-else
-	sys_signame_h = custom_target('sys_signame_h',
-	                              input: 'sys_signame.sh',
-	                              output: 'sys_signame.h',
-	                              command: ['@INPUT@', '@OUTPUT@'])
-	lolibc_srcs += [sys_signame_h, 'sys_signame.c']
 endif
+
+sys_signame_h = custom_target('sys_signame_h',
+                              input: 'sys_signame.sh',
+                              output: 'sys_signame.h',
+                              command: ['@INPUT@', '@OUTPUT@'])
+lolibc_srcs += [sys_signame_h, 'sys_signame.c']
 
 liblolibc = static_library('lolibc',
                            lolibc_srcs,
