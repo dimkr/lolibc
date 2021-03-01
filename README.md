@@ -7,7 +7,7 @@
 
 ```
 
-[![Build Status](https://travis-ci.org/dimkr/lolibc.svg?branch=master)](https://travis-ci.org/dimkr/lolibc)
+[![Build Status](https://github.com/dimkr/lolibc/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/dimkr/lolibc/actions)
 
 ## Overview
 

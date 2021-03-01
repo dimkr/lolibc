@@ -1,7 +1,0 @@
-language: minimal
-
-services:
-  - docker
-
-script:
-  - docker run -w /root/lolibc -v `pwd`:/root/lolibc dimkr/c-dev ./ci.sh
