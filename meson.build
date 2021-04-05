@@ -1,6 +1,6 @@
 project('lolibc', 'c', version: '6.7')
 
-lolibc_srcs = ['strtonum.c', 'reallocarray.c', 'vis.c', 'unvis.c', 'strsignals.c', 'sys_signame.c']
+lolibc_srcs = ['strtonum.c', 'readpassphrase.c', 'reallocarray.c', 'vis.c', 'unvis.c', 'strsignals.c', 'sys_signame.c']
 
 lolibc_c_args = []
 
