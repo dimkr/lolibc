@@ -40,3 +40,8 @@ liblolibc = static_library('lolibc',
                            lolibc_srcs,
                            c_args: lolibc_c_args,
                            include_directories: lolibc_includes)
+
+liblolibc_dep = declare_dependency(
+  include_directories: lolibc_includes,
+  link_with: liblolibc,
+)
