@@ -3,6 +3,8 @@
 
 #include_next <unistd.h>
 
+void	closefrom(int lowfd);
+
 static inline
 int	 pledge(const char *promises, const char *execpromises)
 {
