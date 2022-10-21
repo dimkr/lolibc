@@ -1,4 +1,4 @@
-/*	$OpenBSD: time.h,v 1.61 2021/06/19 13:49:39 cheloha Exp $	*/
+/*	$OpenBSD: time.h,v 1.62 2022/07/23 22:58:51 cheloha Exp $	*/
 /*	$NetBSD: time.h,v 1.18 1996/04/23 10:29:33 mycroft Exp $	*/
 
 /*
@@ -38,6 +38,8 @@
 /* Operations on timevals. */
 #define	timerclear(tvp)		(tvp)->tv_sec = (tvp)->tv_usec = 0
 #define	timerisset(tvp)		((tvp)->tv_sec || (tvp)->tv_usec)
+#define	timerisvalid(tvp)						\
+	((tvp)->tv_usec >= 0 && (tvp)->tv_usec < 1000000)
 #define	timercmp(tvp, uvp, cmp)						\
 	(((tvp)->tv_sec == (uvp)->tv_sec) ?				\
 	    ((tvp)->tv_usec cmp (uvp)->tv_usec) :			\
@@ -62,10 +64,23 @@
 	} while (0)
 
 /* Operations on timespecs. */
+#define	timespecclear(tsp)		(tsp)->tv_sec = (tsp)->tv_nsec = 0
+#define	timespecisset(tsp)		((tsp)->tv_sec || (tsp)->tv_nsec)
+#define	timespecisvalid(tsp)						\
+	((tsp)->tv_nsec >= 0 && (tsp)->tv_nsec < 1000000000L)
 #define	timespeccmp(tsp, usp, cmp)					\
 	(((tsp)->tv_sec == (usp)->tv_sec) ?				\
 	    ((tsp)->tv_nsec cmp (usp)->tv_nsec) :			\
 	    ((tsp)->tv_sec cmp (usp)->tv_sec))
+#define	timespecadd(tsp, usp, vsp)					\
+	do {								\
+		(vsp)->tv_sec = (tsp)->tv_sec + (usp)->tv_sec;		\
+		(vsp)->tv_nsec = (tsp)->tv_nsec + (usp)->tv_nsec;	\
+		if ((vsp)->tv_nsec >= 1000000000L) {			\
+			(vsp)->tv_sec++;				\
+			(vsp)->tv_nsec -= 1000000000L;			\
+		}							\
+	} while (0)
 #define	timespecsub(tsp, usp, vsp)					\
 	do {								\
 		(vsp)->tv_sec = (tsp)->tv_sec - (usp)->tv_sec;		\
