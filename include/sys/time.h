@@ -1,4 +1,4 @@
-/*	$OpenBSD: time.h,v 1.63 2022/12/13 17:30:36 cheloha Exp $	*/
+/*	$OpenBSD: time.h,v 1.65 2023/09/10 03:08:05 cheloha Exp $	*/
 /*	$NetBSD: time.h,v 1.18 1996/04/23 10:29:33 mycroft Exp $	*/
 
 /*
@@ -34,6 +34,8 @@
 
 #ifndef _SYS_TIME_H_
 #define _SYS_TIME_H_
+
+#include <sys/select.h>
 
 /* Operations on timevals. */
 #define	timerclear(tvp)		(tvp)->tv_sec = (tvp)->tv_usec = 0
