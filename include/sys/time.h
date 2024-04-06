@@ -1,4 +1,4 @@
-/*	$OpenBSD: time.h,v 1.65 2023/09/10 03:08:05 cheloha Exp $	*/
+/*	$OpenBSD: time.h,v 1.66 2023/10/17 00:04:02 cheloha Exp $	*/
 /*	$NetBSD: time.h,v 1.18 1996/04/23 10:29:33 mycroft Exp $	*/
 
 /*
