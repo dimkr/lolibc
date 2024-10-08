@@ -3,7 +3,7 @@
 
 #include_next <string.h>
 
-/*	$OpenBSD: string.h,v 1.32 2017/09/05 03:16:13 schwarze Exp $	*/
+/*	$OpenBSD: string.h,v 1.34 2024/08/03 20:13:23 guenther Exp $	*/
 /*	$NetBSD: string.h,v 1.6 1994/10/26 00:56:30 cgd Exp $	*/
 
 /*-

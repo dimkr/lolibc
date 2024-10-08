@@ -1,4 +1,4 @@
-/*	$OpenBSD: cdefs.h,v 1.43 2018/10/29 17:10:40 guenther Exp $	*/
+/*	$OpenBSD: cdefs.h,v 1.44 2024/07/30 05:57:31 guenther Exp $	*/
 /*	$NetBSD: cdefs.h,v 1.16 1996/04/03 20:46:39 christos Exp $	*/
 
 /*

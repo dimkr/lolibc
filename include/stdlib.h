@@ -3,7 +3,7 @@
 
 #include_next <stdlib.h>
 
-/*	$OpenBSD: stdlib.h,v 1.77 2024/03/01 21:30:40 millert Exp $	*/
+/*	$OpenBSD: stdlib.h,v 1.78 2024/08/03 20:09:24 guenther Exp $	*/
 /*	$NetBSD: stdlib.h,v 1.25 1995/12/27 21:19:08 jtc Exp $	*/
 
 /*-
