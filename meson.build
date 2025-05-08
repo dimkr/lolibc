@@ -1,6 +1,6 @@
 project('lolibc', 'c', version: '7.7')
 
-lolibc_srcs = ['strtonum.c', 'reallocarray.c', 'vis.c', 'unvis.c', 'strsignals.c', 'sys_signame.c']
+lolibc_srcs = ['strtonum.c', 'closefrom.c', 'setprogname.c', 'readpassphrase.c', 'reallocarray.c', 'vis.c', 'unvis.c', 'strsignals.c', 'sys_signame.c']
 
 lolibc_c_args = []
 
@@ -40,3 +40,8 @@ liblolibc = static_library('lolibc',
                            lolibc_srcs,
                            c_args: lolibc_c_args,
                            include_directories: lolibc_includes)
+
+liblolibc_dep = declare_dependency(
+  include_directories: lolibc_includes,
+  link_with: liblolibc,
+)

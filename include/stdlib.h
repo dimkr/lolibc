@@ -37,6 +37,7 @@
  *	@(#)stdlib.h	5.13 (Berkeley) 6/4/91
  */
 
+void	setprogname(const char *name);
 void	*reallocarray(void *, size_t, size_t);
 
 long long
