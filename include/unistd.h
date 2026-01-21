@@ -3,8 +3,16 @@
 
 #include_next <unistd.h>
 
+void	closefrom(int lowfd);
+
 static inline
 int	 pledge(const char *promises, const char *execpromises)
+{
+	return 0;
+}
+
+static inline
+int	unveil(const char *path, const char *permissions)
 {
 	return 0;
 }
